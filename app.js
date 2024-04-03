@@ -10,7 +10,7 @@ const app = express();
 
 // Solve CORS
 // { credentials: true, origin: "http://localhost:3000" }
-app.use(cors());
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 // Upload directory
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
