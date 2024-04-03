@@ -10,12 +10,7 @@ const app = express();
 
 // Solve CORS
 // { credentials: true, origin: "http://localhost:3000" }
-const corsOptions = {
-	credentials: true,
-	origin: ["http://youtube.com"],
-	methods: ['GET', 'POST', 'PUT', 'DELETE']
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 // Upload directory
