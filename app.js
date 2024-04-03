@@ -13,6 +13,7 @@ const app = express();
 const corsOptions = {
 	credentials: true,
 	origin: ["http://youtube.com"],
+	methods: ['GET', 'POST', 'PUT', 'DELETE']
 };
 app.use(cors(corsOptions));
 
