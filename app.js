@@ -9,7 +9,8 @@ const port = process.env.PORT;
 const app = express();
 
 // Solve CORS
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+// { credentials: true, origin: "http://localhost:3000" }
+app.use(cors());
 
 // Upload directory
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
