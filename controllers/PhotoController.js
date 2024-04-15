@@ -72,7 +72,7 @@ const getAllPhotos = async (req, res) => {
 	photos.map(async (photo) => {
 		const user = await User.findById(photo.userId);
 		photo.profileImage = user.profileImage;
-		photo.name = user.name;
+		photo.userName = user.name;
 		await photo.save();
 	});
 
