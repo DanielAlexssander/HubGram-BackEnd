@@ -20,6 +20,7 @@ const insertPhoto = async (req, res) => {
 		title,
 		userId: user._id,
 		userName: user.name,
+		profileImage: user.profileImage,
 	});
 
 	// if photo was created sucessfully, return data
