@@ -12,7 +12,7 @@ const app = express();
 // { credentials: true, origin: "http://localhost:3000" }
 const corsOptions = {
 	credentials: false,
-	origin: "https://hubgram.netlify.app",
+	origin: "*",
 };
 app.use(cors(corsOptions));
 
