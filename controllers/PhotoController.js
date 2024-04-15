@@ -69,6 +69,13 @@ const getAllPhotos = async (req, res) => {
 		.sort([["createdAt", -1]])
 		.exec();
 
+	photos.map(async (photo) => {
+		const user = await User.findById(photo.userId);
+		photo.profileImage = user.profileImage;
+		photo.name = user.name;
+		await photo.save();
+	});
+
 	return res.status(200).json(photos);
 };
 
