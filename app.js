@@ -10,8 +10,11 @@ const app = express();
 
 // Solve CORS
 // { credentials: true, origin: "http://localhost:3000" }
-app.use(cors());
-
+const corsOptions = {
+	credentials: false,
+	origin: "https://hubgram.netlify.app",
+};
+app.use(cors(corsOptions));
 
 // Upload directory
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));

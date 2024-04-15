@@ -124,9 +124,9 @@ const getUserById = async (req, res) => {
 	const { id } = req.params;
 
 	try {
-		const user = await User.findById(new mongoose.Types.ObjectId(id)).select(
-			"-password"
-		);
+		const user = await User.findById(new mongoose.Types.ObjectId(id))
+			.select("-password")
+			.select("-email");
 
 		// Check if user exist
 		if (!user) {
@@ -146,6 +146,7 @@ const searchUser = async (req, res) => {
 	const { q } = req.query;
 	const users = await User.find({ name: new RegExp(q, "i") })
 		.select("-password")
+		.select("-email")
 		.exec();
 
 	res.status(200).json(users);

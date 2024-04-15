@@ -23,7 +23,7 @@ const userCreateValidation = () => {
 				}
 				return true;
 			}),
-		body("confirmpassword")
+		body("confirmPassword")
 			.isString()
 			.withMessage("Comfirm Password is required.")
 			.custom((value, { req }) => {
